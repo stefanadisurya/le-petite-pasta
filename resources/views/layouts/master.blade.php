@@ -24,6 +24,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('css/login.css')}}" rel="stylesheet">
 
     {{-- <style>
       @media (max-width: 768px) {

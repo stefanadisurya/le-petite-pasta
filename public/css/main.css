@@ -617,8 +617,8 @@ input {
    #TITLE
    ========================================================================== */
 .title {
-    font-size: 24px;
-    color: #525252;
+    font-size: 35px;
+    color: #000000;
     font-weight: 400;
     margin-bottom: 40px;
 }
