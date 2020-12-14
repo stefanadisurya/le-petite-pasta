@@ -15,14 +15,33 @@
         @guest
             {{-- Jika guest yang mengakses halaman --}}
             <li class="nav-item">
-                <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('login') }}">{{ __('Login') }}</a>
+              <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('root') }}">{{ __('Home') }}</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white js-scroll-trigger mr-3 ml-3" href="#">{{ __('Our Menu') }}</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white js-scroll-trigger mr-3 ml-3" href="#">{{ __('About') }}</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a id="navbarDropdown" class="nav-link dropdown-toggle text-white ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                  Join Us!
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a>
+
+                  @if (Route::has('register'))
+                    <a class="dropdown-item" href="{{ route('register') }}">{{ __('Register') }}</a>
+                  @endif
+              </div>
+          </li>
+            
   
-            @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link text-white js-scroll-trigger ml-3" href="{{ route('register') }}">{{ __('Register') }}</a>
-                </li>
-            @endif
+            
         @else
             {{-- Jika admin yang mengakses halaman --}}
             @if(auth()->user()->role=="admin")
@@ -52,7 +71,7 @@
 
                       <a class="dropdown-item text-danger" href="#">
                         View All Transaction
-                    </a>
+                      </a>
 
                     <a class="dropdown-item text-danger" href="#">
                         View All User

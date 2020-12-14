@@ -23,16 +23,20 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet" media="all">
-    <link href="{{ asset('css/login.css')}}" rel="stylesheet">
 
-    {{-- <style>
+    @yield('styles')
+  
+    <style>
+      .navbar {
+        background-color: #000000;
+      }
+
       @media (max-width: 768px) {
         .navbar-nav .nav-item:not(:last-child) {
           border-right: none;
         }
       }
-    </style> --}}
+    </style>
 
     <link href="{{ asset('vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
@@ -46,7 +50,7 @@
 
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
       <div class="container">
           @include('layouts.header')
       </div>

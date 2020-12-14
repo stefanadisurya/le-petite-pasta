@@ -14,13 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/', function() {
-    return view('layouts.master');
-})->name('root');
+Route::get('/', 'GuestController@index')->name('root')->middleware('guest');
 
 Auth::routes();
 
