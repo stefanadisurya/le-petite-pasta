@@ -64,7 +64,7 @@
                             <p class="card-text">Rp {{ $product->price }}</p>
                             <div class="row justify-content-start">
                             <div class="col-md-12 my-2">
-                                <a href="{{ $product->id }}" class="btn">Order</a>
+                                <a href="/menu/{{ $product->id }}" class="btn">Order</a>
                             </div>
                         </div>
                     </div>

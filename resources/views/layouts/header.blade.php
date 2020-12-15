@@ -46,7 +46,7 @@
             {{-- Jika admin yang mengakses halaman --}}
             @if(auth()->user()->role=="admin")
               <li class="nav-item">
-                <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('home') }}">View All Transaction</a>
+                <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('transactions') }}">View All Transaction</a>
                 </li>
 
                 <li class="nav-item">
@@ -54,8 +54,12 @@
                   </li>
   
               <li class="nav-item dropdown">
-                  <a id="navbarDropdown" class="nav-link dropdown-toggle text-white ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    @if(auth()->user()->image == null)
                       {{ Auth::user()->username ?? '' }}
+                    @else
+                      <img src="{{ asset('assets/image/' . auth()->user()->image) }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
+                    @endif
                   </a>
   
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -80,31 +84,36 @@
               </li>
 
               <li class="nav-item">
-              <a class="nav-link text-white js-scroll-trigger mr-3" href="#">Our Menu</a>
+              <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('menu') }}">Our Menu</a>
               </li>
   
               <li class="nav-item">
-              <a class="nav-link text-white js-scroll-trigger ml-3 mr-3" href="#">About</a>
+              <a class="nav-link text-white js-scroll-trigger mr-3" href="#">About</a>
               </li>
   
               <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                  @if(auth()->user()->image == null)
                     {{ Auth::user()->username ?? '' }}
+                  @else
+                    <img src="{{ asset('assets/image/' . auth()->user()->image) }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
+                  @endif
                 </a>
   
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item text-dark" href="{{ route('cart') }}">
+                      View Cart
+                  </a>
+
+                    <a class="dropdown-item text-dark" href="{{ route('transactions') }}">
+                        View Transaction History
+                    </a>
+
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
-                    </a>
-
-                    <a class="dropdown-item text-danger" href="#">
-                        View Transaction History
-                    </a>
-
-                    <a class="dropdown-item text-danger" href="#">
-                        View Transaction History
                     </a>
   
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

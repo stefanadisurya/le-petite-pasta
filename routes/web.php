@@ -18,6 +18,8 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth', 'roles:admin,member']], function () {
     Route::get('/home', 'GlobalController@home')->name('home');
+    Route::get('/transactions', 'GlobalController@show')->name('transactions');
+    Route::get('/transactions/{header}', 'GlobalController@detailTransaction')->name('detailTransaction');
 });
 
 Route::group(['middleware' => ['auth', 'roles:admin']], function () {
@@ -28,10 +30,22 @@ Route::group(['middleware' => ['auth', 'roles:admin']], function () {
     Route::post('/add', 'AdminController@store');
     Route::get('/edit/{product}', 'AdminController@edit')->name('edit');
     Route::post('/edit/{product}', 'AdminController@update');
+    Route::get('/delete/{product}', 'AdminController@delete')->name('delete');
+    Route::delete('/delete/{product}', 'AdminController@destroy');
+});
+
+Route::group(['middleware' => ['auth', 'roles:member']], function () {
+    Route::get('/menu', 'MemberController@menu')->name('menu');
+    Route::get('/menu/{product}', 'MemberController@order')->name('order');
+    Route::post('/menu/{product}', 'MemberController@store');
+    Route::get('/cart', 'MemberController@cart')->name('cart');
+    Route::post('/cart/update/{cart}', 'MemberController@updateQty');
+    Route::delete('/cart/remove/{cart}', 'MemberController@remove');
+    Route::post('/cart', 'MemberController@checkout')->name('checkout');
 });
 
 Route::get('/', 'GuestController@home')->name('root')->middleware('guest');
-Route::get('/menu', 'GuestController@menu')->name('guestmenu')->middleware('guest');
+Route::get('/ourmenu', 'GuestController@menu')->name('guestmenu')->middleware('guest');
 Route::get('/{product}', 'GuestController@order')->name('guestorder')->middleware('guest');
 
 // Route::get('/home', 'HomeController@index')->name('home');

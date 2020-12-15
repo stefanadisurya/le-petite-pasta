@@ -42,7 +42,7 @@
     <div class="container">
         <h1 class="display-4 text-white">Le Petite Pasta</h1>
         <p class="lead text-white">your pasta buddy.</p>
-        <a href="#">
+        <a href="{{ route('guestmenu') }}">
             <button class="btn text-white mt-3">Our Menu</button>
         </a>
     </div>
@@ -74,13 +74,12 @@
                     
                   @endforeach
                   </div>
-                    <a href="#">
+                    <a href="{{ route('guestmenu') }}">
                         <button class="btn text-white mt-4 mb-5">View All</button>
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    
 </div>
 @endsection

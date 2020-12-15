@@ -14,4 +14,12 @@ class Product extends Model
     protected $fillable = [
         'name', 'price', 'description', 'image'
     ];
+
+    public function carts() {
+        return $this->hasMany(Cart::class);
+    }
+
+    public function detailTransactions() {
+        return $this->hasMany(DetailTransaction::class);
+    }
 }

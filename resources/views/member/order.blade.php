@@ -14,9 +14,31 @@
         margin-top: -120px;
     }
 
-    .card .btn {
+    .card {
+            background: #fff;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+        }
+
+    .card .btn1 {
         background-color: #000000;
+        color: #ffffff;
         border-radius: 10px;
+        -webkit-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        cursor: pointer;
+        color: #fff;
+        font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+    }
+
+    .btn1:hover {
+        color: #ffffff;
     }
 
     .card img {
@@ -47,16 +69,16 @@
                     </div>
                     
                     <div class="col-lg-6 mx-5 my-3">
-                        <p class="h1 font-weight-bold">{{ $product->name }}</p>
-                        <p>{{ $product->description }}</p>
+                        <p class="h1 font-weight-bold mx-0">{{ $product->name }}</p>
+                        <p class="mx-0">{{ $product->description }}</p>
                         <br><br>
-                        <p>Rp. {{ $product->price }}</p>
+                        <p class="mx-0"><b>Price:</b> Rp {{ $product->price }}</p>
                         <br><br>
-                        <form method="POST" action="{{ route('guestorder', $product) }}">
+                        <form method="POST" action="{{ route('order', $product) }}">
                             @csrf
                             <div class="form-group row">
                                 <div class="col-md-3">
-                                    <label for="quantity">Quantity: </label>
+                                    <label for="quantity"><b>Quantity:</b> </label>
                                 </div>
                                 
                                 <div class="col-md-6">
@@ -71,7 +93,7 @@
 
                             <div class="row">
                                 <div class="col-md-3">
-                                    <button type="submit" class="btn btn-primary" disabled>
+                                    <button type="submit" class="btn btn1">
                                         {{ __('Add to Cart') }}
                                     </button>
                                 </div>

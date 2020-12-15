@@ -80,4 +80,15 @@ class AdminController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function delete(Product $product) {
+        return view('admin.delete', ['product' => $product]);
+    }
+
+    public function destroy(Product $product) {
+        Product::destroy($product->id);
+        Alert::success('Delete Success!', 'Product deleted');
+
+        return redirect()->route('home');
+    }
 }
