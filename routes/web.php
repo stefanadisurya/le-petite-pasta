@@ -46,6 +46,3 @@ Route::group(['middleware' => ['auth', 'roles:member']], function () {
 
 Route::get('/', 'GuestController@home')->name('root')->middleware('guest');
 Route::get('/ourmenu', 'GuestController@menu')->name('guestmenu')->middleware('guest');
-Route::get('/{product}', 'GuestController@order')->name('guestorder')->middleware('guest');
-
-// Route::get('/home', 'HomeController@index')->name('home');
