@@ -24,6 +24,7 @@ class UserSeeder extends Seeder
                 'address' => 'Le Petite Pasta',
                 'phone_number' => '0218465780',
                 'gender' => 'Male',
+                'image' => 'user1.jpg',
                 'remember_token' => Str::random(50)
             ],
             [
@@ -36,6 +37,7 @@ class UserSeeder extends Seeder
                 'address' => 'Jalan Anggrek, no. 2',
                 'phone_number' => '081725192242',
                 'gender' => 'Male',
+                'image' => 'user2.jpg',
                 'remember_token' => Str::random(50)
             ],
             [
@@ -48,6 +50,7 @@ class UserSeeder extends Seeder
                 'address' => 'Jalan Z, no. 10',
                 'phone_number' => '0218459078',
                 'gender' => 'Male',
+                'image' => 'user4.jpg',
                 'remember_token' => Str::random(50)
             ],
             [
@@ -60,6 +63,7 @@ class UserSeeder extends Seeder
                 'address' => 'Perum. Gading Asri, no. 10',
                 'phone_number' => '089847685970',
                 'gender' => 'Female',
+                'image' => 'user3.jpg',
                 'remember_token' => Str::random(50)
             ],
         ]);

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Le Petite Pasta')
+@section('title', 'Home — Le Petite Pasta')
 
 @section('styles')
     <style>
@@ -69,7 +69,7 @@
                   <div class="row">
                     @foreach ($products as $product)
                     <div class="col-sm-5">
-                        <img src="{{ asset('assets/' . $product->image) }}" alt="" class="mb-3">
+                        <img src="{{ asset('assets/image/' . $product->image) }}" alt="" class="mb-3">
                     </div>
                     
                   @endforeach

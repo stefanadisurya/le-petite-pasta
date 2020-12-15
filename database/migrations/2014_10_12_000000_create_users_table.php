@@ -24,9 +24,11 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->string('phone_number');
             $table->string('gender');
+            $table->string('image')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

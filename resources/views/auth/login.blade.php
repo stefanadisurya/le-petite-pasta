@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Login')
+@section('title', 'Login — Le Petite Pasta')
 
 @section('styles')
 <link href="{{ asset('css/main.css') }}" rel="stylesheet" media="all">
@@ -82,7 +82,7 @@
       <div class="card card-4">
         <div class="row no-gutters">
           <div class="col-md-5">
-            <img src="assets/login.jpg" alt="login" class="login-card-img">
+            <img src="assets/image/login.jpg" alt="login" class="login-card-img">
           </div>
           <div class="col-md-7">
             <div class="card-body">
