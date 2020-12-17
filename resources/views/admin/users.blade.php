@@ -68,5 +68,8 @@
                 @endforeach
             </tbody>
           </table>
+          @for ($i = 0; $i < 5; $i++)
+            <br>
+        @endfor
     </div>
 @endsection
