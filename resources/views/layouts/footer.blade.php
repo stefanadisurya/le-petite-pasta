@@ -3,4 +3,4 @@
       © 2020 Copyright:
       <a class="text-white" href="https://instagram.com/">Le Petite Pasta</a>
     </div>
-  </footer>
+</footer>

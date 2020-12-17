@@ -78,7 +78,7 @@
     </div>
 </div> --}}
 <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
-    <div class="container">
+    <div class="container showcase-left">
       <div class="card card-4">
         <div class="row no-gutters">
           <div class="col-md-5">

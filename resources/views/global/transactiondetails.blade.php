@@ -54,11 +54,11 @@
 @section('content')
 @if(auth()->user()->role=="admin" || auth()->user()->role=="member" )
 @forelse ($transactions as $transaction)
-    <div class="container my-5">
+    <div class="container my-5 showcase-left">
         <div class="row justify-content-start">
             <div class="col-md-12 my-0">
                 <div class="card mt-0 mb-0">
-                    <div class="row showcase-left">
+                    <div class="row">
                         <div class="col-sm-4 mr-0">
                             <img src="{{ asset('assets/image/' . $transaction->product->image) }}" class="mx-3 my-3" alt="{{ $transaction->product->name }}" style="width: 370px; height: 350px">
                         </div>
@@ -75,12 +75,14 @@
     </div>
 
     @empty
-        <div class="d-flex justify-content-center my-5">
+        <div class="d-flex justify-content-center my-5 showcase-bottom">
             <p class="h4 text-muted">No transaction</p>
         </div>
 
 @endforelse
 
 @endif
-
+@for ($i = 0; $i < 10; $i++)
+    <br>
+@endfor
 @endsection

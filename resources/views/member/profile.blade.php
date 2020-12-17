@@ -57,11 +57,11 @@
 @endsection
 
 @section('content')
-    <div class="container my-5">
+    <div class="container my-5 showcase-left">
         <div class="row justify-content-start">
             <div class="col-md-12 my-3">
                 <div class="card border-light mt-5 mb-3">
-                    <div class="row showcase-left">
+                    <div class="row">
                         <div class="col-sm-4 mr-0">
                             <img src="{{ asset('assets/image/' . $user->image) }}" class="mx-3 my-3" alt="{{ $user->name }}">
                         </div>

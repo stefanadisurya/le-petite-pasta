@@ -44,7 +44,7 @@
 
 @section('content')
 @if(auth()->user()->role=="member")
-<div class="container my-5">
+<div class="container my-5 showcase-bottom">
     @if($transactions->count() > 0)
         <table class="table">
             <thead>
@@ -71,7 +71,7 @@
             <br>
         @endfor
       @else
-        <div class="d-flex justify-content-center my-5">
+        <div class="d-flex justify-content-center my-5 showcase-bottom">
             <p class="h4 text-muted">No transaction</p>
         </div>
         @for ($i = 0; $i < 30; $i++)

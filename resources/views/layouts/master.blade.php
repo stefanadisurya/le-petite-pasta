@@ -18,6 +18,9 @@
       @yield('title')
     </title>
 
+    {{-- Scroll Reveal --}}
+    <script src="https://unpkg.com/scrollreveal"></script>
+
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <!-- Fonts -->
@@ -88,6 +91,34 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     -->
+
+    <script>
+      window.sr = ScrollReveal();
+      sr.reveal('.navbar', {
+          duration: 2000,
+          origin: 'top'
+      });
+      sr.reveal('.showcase-top', {
+          duration: 2000,
+          origin: 'top',
+          distance: '300px'
+      });
+      sr.reveal('.showcase-left', {
+          duration: 2000,
+          origin: 'left',
+          distance: '300px'
+      });
+      sr.reveal('.showcase-right', {
+          duration: 2000,
+          origin: 'right',
+          distance: '300px'
+      });
+      sr.reveal('.showcase-bottom', {
+          duration: 2000,
+          origin: 'bottom',
+          distance: '300px'
+      });
+      </script>
 
     @include('sweetalert::alert')
   </body>

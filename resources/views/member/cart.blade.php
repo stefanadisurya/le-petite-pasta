@@ -54,7 +54,7 @@
 @section('content')
     @if(auth()->user()->role=="member")
         @foreach ($carts as $cart)
-            <div class="container my-5">
+            <div class="container my-5 showcase-left">
                 <div class="row justify-content-start">
                     <div class="col-md-12 my-3">
                         <div class="card mt-0 mb-0">
@@ -111,7 +111,7 @@
         @endforeach
 
         @if($carts->count() > 0)
-            <div class="d-flex justify-content-center" style="text-align: center" >
+            <div class="d-flex justify-content-center showcase-left" style="text-align: center" >
                 <form action="/cart" method="post">
                     @csrf
                     <button type="submit" class="btn btn1 my-3">
@@ -123,7 +123,7 @@
                 <br>
             @endfor
         @else
-            <div class="d-flex justify-content-center my-5">
+            <div class="d-flex justify-content-center my-5 showcase-bottom">
                 <p class="h4 text-muted">Cart empty</p>
             </div>
             @for ($i = 0; $i < 30; $i++)

@@ -39,7 +39,7 @@
 
 @section('content')
 <div class="jumbotron jumbotron-fluid">
-    <div class="container">
+    <div class="container showcase-left">
         <h1 class="display-4 text-white">Le Petite Pasta</h1>
         <p class="lead text-white">your pasta buddy.</p>
         <a href="{{ route('guestmenu') }}">
@@ -48,7 +48,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container showcase-left">
     <div class="row d-flex justify-content-center">
         <div class="col-md-4 d-flex justify-content-start">
             <div class="card mt-5 bg-transparent border-light" style="width: 30rem;">

@@ -21,7 +21,7 @@
 @section('content')
 <div class="page-wrapper p-t-100 p-b-100 font-poppins">
     <div class="wrapper wrapper--w680">
-        <div class="card card-4">
+        <div class="card showcase-bottom card-4">
             <div class="card-body">
                 <h2 class="title d-flex justify-content-center">Edit Profile</h2>
                 <form method="POST" action="{{ route('editprofile', $user->id) }}" enctype="multipart/form-data">

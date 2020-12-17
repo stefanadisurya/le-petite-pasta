@@ -49,13 +49,13 @@
         </div>
     </div>
 
-    <h1 class="font-weight-bold text-center mt-5">Our Menu</h1>
-    <hr>
+    <h1 class="font-weight-bold text-center mt-5 showcase-left">Our Menu</h1>
+    <hr class="showcase-left">
     <div class="container my-5">
         <div class="row justify-content-center">
             @forelse ($products as $product)
                 <div class="col-md-3 my-3">
-                    <div class="card bg-transparent border-light mt-5" style="width: 15rem;">
+                    <div class="card bg-transparent border-light mt-5 showcase-left" style="width: 15rem;">
                             <img src="{{ asset('assets/image/' . $product->image) }}" style="height:250px" class="card-img-top">
                             <div class="card-body">
                                 <h5 class="card-title font-weight-bold text-dark">{{ $product->name }}</h5>
