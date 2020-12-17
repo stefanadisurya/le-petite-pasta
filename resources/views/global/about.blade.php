@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Menu — Le Petite Pasta')
+@section('title', 'About — Le Petite Pasta')
 
 @section('styles')
 <style>
