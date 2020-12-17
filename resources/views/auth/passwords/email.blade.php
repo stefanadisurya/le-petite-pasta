@@ -1,11 +1,58 @@
-@extends('layouts.app')
+@extends('layouts.master')
+
+@section('title', 'Reset Password — Le Petite Pasta')
+
+@section('styles')
+<style>
+    * {
+        font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+    }
+
+    .jumbotron {
+        background-color: #000000;
+        height: 500px;
+        margin-top: -120px;
+    }
+
+    .card .btn {
+        background-color: #000000;
+        color: #ffffff;
+        border-radius: 10px;
+    }
+
+    .card {
+        background: #fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    hr {
+        border-color: #000000;
+        width: 100px;
+        margin-top: 50px;
+    }
+
+    h5, .card p, .card a {
+        margin-left: -10px;
+    }
+
+    .bg-black {
+        background-color: #000000;
+        color: #ffffff;
+    }
+</style>
+@endsection
 
 @section('content')
-<div class="container">
+<div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+                <div class="card-header bg-black">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -33,7 +80,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
                             </div>
@@ -44,4 +91,8 @@
         </div>
     </div>
 </div>
+
+@for ($i = 0; $i < 20; $i++)
+    <br>
+@endfor
 @endsection

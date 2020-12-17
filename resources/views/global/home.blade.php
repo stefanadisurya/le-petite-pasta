@@ -117,6 +117,9 @@
                     </div>
             @endforelse
         </div>
+        @for ($i = 0; $i < 3; $i++)
+            <br>
+        @endfor
     </div>
     
     @elseif(auth()->user()->role=="member")
@@ -137,7 +140,7 @@
                     <div class="card-body">
                       <h1 class="card-title font-weight-bold mb-3">About</h1>
                       <p class="card-text">Created in 2020, Le Petite Pasta innovates to make an instant pasta. The presentation of the pasta is quite simple, namely by using a small container of aluminum foil, with the aim that it can be warmed if you want to consume it for a long time.</p>
-                      <a href="#">
+                      <a href="{{ route('about') }}">
                         <button class="btn btn1 mt-4 mb-5">Read More</button>
                       </a>
                     </div>
@@ -165,6 +168,10 @@
         </div>
         
     </div>
+
+    @for ($i = 0; $i < 3; $i++)
+        <br>
+    @endfor
     @endif
 
 @endsection

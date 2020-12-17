@@ -77,4 +77,8 @@
         </div>
     </div>
 
+    @for ($i = 0; $i < 3; $i++)
+        <br>
+    @endfor
+
 @endsection

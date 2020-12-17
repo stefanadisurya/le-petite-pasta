@@ -70,6 +70,6 @@
           </table>
           @for ($i = 0; $i < 20; $i++)
             <br>
-        @endfor
+          @endfor
     </div>
 @endsection
