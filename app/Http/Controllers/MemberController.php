@@ -12,6 +12,47 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class MemberController extends Controller
 {
+    public function profile(User $user) {
+        return view('member.profile', ['user' => $user]);
+    }
+
+    public function deleteAccount(User $user) {
+        User::destroy($user->id);
+        Alert::success('Remove Account Success!', 'Your account has been removed');
+
+        return redirect()->route('root');
+    }
+
+    public function edit(User $user) {
+        return view('member.edit', ['user' => $user]);
+    }
+
+    public function update(Request $request, User $user) {
+        $request->validate([
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            // 'password' => ['required', 'string', 'min:6'],
+            'address' => ['required', 'min:5'],
+            'phone_number' => ['required', 'numeric']
+        ]);
+
+        $filename = $request->image->getClientOriginalName();
+
+        User::where('id', $user->id)->update([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            // 'password' => bcrypt($request->password),
+            'address' => $request->address,
+            'phone_number' => $request->phone_number,
+            'image' => $filename
+        ]);
+
+        $request->image->storeAs('image', $filename, 'public');
+        Alert::success('Edit Profile Success!', 'Your profile has been updated');
+
+        return redirect()->route('profile', ['user' => $user]);
+    }
+
     public function menu() {
         $products = Product::all();
         return view('member.menu', ['products' => $products]);

@@ -119,10 +119,16 @@
                     </button>
                 </form>
             </div>
+            @for ($i = 0; $i < 3; $i++)
+                <br>
+            @endfor
         @else
             <div class="d-flex justify-content-center my-5">
                 <p class="h4 text-muted">Cart empty</p>
             </div>
+            @for ($i = 0; $i < 30; $i++)
+                <br>
+            @endfor
         @endif
     @endif
 

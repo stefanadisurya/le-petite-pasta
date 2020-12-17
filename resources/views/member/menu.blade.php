@@ -43,41 +43,38 @@
 @endsection
 
 @section('content')
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <a href="#">
-            <button class="btn text-white mt-3">Our Menu</button>
-        </a>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+        </div>
     </div>
-</div>
 
-<h1 class="font-weight-bold text-center mt-5">Our Menu</h1>
-<hr>
-<div class="container my-5">
-    <div class="row justify-content-center">
-        @forelse ($products as $product)
-            <div class="col-md-3 my-3">
-                <div class="card bg-transparent border-light mt-5" style="width: 15rem;">
-                        <img src="{{ asset('assets/image/' . $product->image) }}" style="height:250px" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title font-weight-bold text-dark">{{ $product->name }}</h5>
-                            <p class="card-text">Rp {{ $product->price }}</p>
-                            <div class="row justify-content-start">
-                            <div class="col-md-12 my-2">
-                                <a href="/menu/{{ $product->id }}" class="btn">Order</a>
+    <h1 class="font-weight-bold text-center mt-5">Our Menu</h1>
+    <hr>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            @forelse ($products as $product)
+                <div class="col-md-3 my-3">
+                    <div class="card bg-transparent border-light mt-5" style="width: 15rem;">
+                            <img src="{{ asset('assets/image/' . $product->image) }}" style="height:250px" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title font-weight-bold text-dark">{{ $product->name }}</h5>
+                                <p class="card-text">Rp {{ $product->price }}</p>
+                                <div class="row justify-content-start">
+                                <div class="col-md-12 my-2">
+                                    <a href="/menu/{{ $product->id }}" class="btn">Order</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            @empty
-                <div class="d-flex justify-content-center my-5">
-                    <p class="h4 text-muted">No item in the store</p>
-                </div>
-        @endforelse
+                @empty
+                    <div class="d-flex justify-content-center my-5">
+                        <p class="h4 text-muted">No item in the store</p>
+                    </div>
+            @endforelse
+        </div>
     </div>
-</div>
-</div>
 
 @endsection

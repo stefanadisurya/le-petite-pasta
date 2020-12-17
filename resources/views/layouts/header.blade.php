@@ -14,20 +14,20 @@
       <ul class="navbar-nav ml-auto">
         @guest
             {{-- Jika guest yang mengakses halaman --}}
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('root') }}">{{ __('Home') }}</a>
+            </li> --}}
+
+            <li class="nav-item">
+              <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('guestmenu') }}">{{ __('Our Menu') }}</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-white js-scroll-trigger mr-3 ml-3" href="{{ route('guestmenu') }}">{{ __('Our Menu') }}</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link text-white js-scroll-trigger mr-3 ml-3" href="#">{{ __('About') }}</a>
+              <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('about') }}">{{ __('About') }}</a>
             </li>
 
             <li class="nav-item dropdown">
-              <a id="navbarDropdown" class="nav-link dropdown-toggle text-white ml-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   Join Us!
               </a>
 
@@ -39,8 +39,6 @@
                   @endif
               </div>
           </li>
-            
-  
             
         @else
             {{-- Jika admin yang mengakses halaman --}}
@@ -79,16 +77,16 @@
   
             {{-- Jika guest yang mengakses halaman --}}
             @elseif(auth()->user()->role=="member")
-              <li class="nav-item">
+              {{-- <li class="nav-item">
               <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('home') }}">Home</a>
-              </li>
+              </li> --}}
 
               <li class="nav-item">
               <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('menu') }}">Our Menu</a>
               </li>
   
               <li class="nav-item">
-              <a class="nav-link text-white js-scroll-trigger mr-3" href="#">About</a>
+              <a class="nav-link text-white js-scroll-trigger mr-3" href="{{ route('about') }}">About</a>
               </li>
   
               <li class="nav-item dropdown">
@@ -101,6 +99,10 @@
                 </a>
   
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item text-dark" href="{{ route('profile', auth()->user()->id) }}">
+                    Profile
+                  </a>
+
                   <a class="dropdown-item text-dark" href="{{ route('cart') }}">
                       View Cart
                   </a>

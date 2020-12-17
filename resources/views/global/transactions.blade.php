@@ -66,10 +66,17 @@
                 @endforeach
             </tbody>
         </table>
+
+        @for ($i = 0; $i < 20; $i++)
+            <br>
+        @endfor
       @else
         <div class="d-flex justify-content-center my-5">
             <p class="h4 text-muted">No transaction</p>
         </div>
+        @for ($i = 0; $i < 30; $i++)
+            <br>
+        @endfor
       @endif
 </div>
 
@@ -100,6 +107,9 @@
         <div class="d-flex justify-content-center my-5">
             <p class="h4 text-muted">No transaction</p>
         </div>
+        @for ($i = 0; $i < 30; $i++)
+            <br>
+        @endfor
       @endif
 </div>
 @endif

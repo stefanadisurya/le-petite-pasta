@@ -35,6 +35,10 @@ Route::group(['middleware' => ['auth', 'roles:admin']], function () {
 });
 
 Route::group(['middleware' => ['auth', 'roles:member']], function () {
+    Route::get('/profile/{user}', 'MemberController@profile')->name('profile');
+    Route::delete('/profile/{user}', 'MemberController@deleteAccount');
+    Route::get('/profile/{user}/edit', 'MemberController@edit')->name('editprofile');
+    Route::post('/profile/{user}/edit', 'MemberController@update');
     Route::get('/menu', 'MemberController@menu')->name('menu');
     Route::get('/menu/{product}', 'MemberController@order')->name('order');
     Route::post('/menu/{product}', 'MemberController@store');
@@ -46,3 +50,4 @@ Route::group(['middleware' => ['auth', 'roles:member']], function () {
 
 Route::get('/', 'GuestController@home')->name('root')->middleware('guest');
 Route::get('/ourmenu', 'GuestController@menu')->name('guestmenu')->middleware('guest');
+Route::get('/about', 'GlobalController@about')->name('about');

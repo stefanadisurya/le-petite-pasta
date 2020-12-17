@@ -11,6 +11,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     
+    {{-- Font Awesome CDN --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
     <title>
       @yield('title')
     </title>
@@ -27,8 +30,14 @@
     @yield('styles')
   
     <style>
-      .navbar {
+      .navbar, .bg-black {
         background-color: #000000;
+      }
+
+      footer {
+        bottom:0;
+        width:100%;
+        height:60px; 
       }
 
       @media (max-width: 768px) {
@@ -57,6 +66,9 @@
   </nav>
 
   @yield('content')
+
+  @include('layouts.footer')
+  
 
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <!-- Vendor JS-->
