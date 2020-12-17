@@ -54,7 +54,7 @@
 @section('content')
 @if(auth()->user()->role=="admin" || auth()->user()->role=="member" )
 @forelse ($transactions as $transaction)
-    <div class="container my-5 showcase-left">
+    <div class="container my-5">
         <div class="row justify-content-start">
             <div class="col-md-12 my-0">
                 <div class="card mt-0 mb-0">
@@ -75,7 +75,7 @@
     </div>
 
     @empty
-        <div class="d-flex justify-content-center my-5 showcase-bottom">
+        <div class="d-flex justify-content-center my-5">
             <p class="h4 text-muted">No transaction</p>
         </div>
 

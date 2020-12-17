@@ -46,10 +46,10 @@
         </div>
     </div>
 
-    <h1 class="font-weight-bold text-center mt-5 showcase-left">About</h1>
-    <hr class="showcase-left">
+    <h1 class="font-weight-bold text-center mt-5 ">About</h1>
+    <hr class="">
 
-    <div class="container my-5 showcase-left">
+    <div class="container my-5 ">
         <div class="row">
             <p class="text-center">
                 Pasta is a typical Italian processed food, which is usually made from unleavened dough made from wheat flour mixed with
@@ -74,36 +74,36 @@
         </div>
     </div>
 
-    <h1 class="font-weight-bold text-center mtx showcase-top">Team</h1>
-    <hr class="showcase-top">
+    <h1 class="font-weight-bold text-center mtx">Team</h1>
+    <hr class="">
 
     <div class="container my-5">
         <div class="row mb-5 d-flex justify-content-center">
-            <div class="col-lg-4 showcase-left">
+            <div class="col-lg-4 ">
                 <img src="{{ asset('assets/image/user1.jpg') }}" alt="" class="mx-auto d-block mb-3">
                 <p class="h4 text-center font-weight-bold">Stefan Adisurya</p>
                 <p class="text-muted text-center"><em>Project Manager</em></p>
             </div>
 
-            <div class="col-lg-4 showcase-top">
+            <div class="col-lg-4 ">
                 <img src="{{ asset('assets/image/user1.jpg') }}" alt="" class="mx-auto d-block mb-3">
                 <p class="h4 text-center font-weight-bold">Nicholas Owen</p>
                 <p class="text-muted text-center"><em>Data Engineer</em></p>
             </div>
 
-            <div class="col-lg-4 showcase-right">
+            <div class="col-lg-4">
                 <img src="{{ asset('assets/image/user1.jpg') }}" alt="" class="mx-auto d-block mb-3">
                 <p class="h4 text-center font-weight-bold">Ravli A. Kahfi</p>
                 <p class="text-muted text-center"><em>Business Analyst</em></p>
             </div>
 
-            <div class="col-lg-3 my-5 showcase-bottom">
+            <div class="col-lg-3 my-5">
                 <img src="{{ asset('assets/image/user1.jpg') }}" alt="" class="mx-auto d-block mb-3">
                 <p class="h4 text-center font-weight-bold">Fraderic</p>
                 <p class="text-muted text-center"><em>Developer</em></p>
             </div>
 
-            <div class="col-lg-3 my-5 showcase-bottom">
+            <div class="col-lg-3 my-5">
                 <img src="{{ asset('assets/image/user1.jpg') }}" alt="" class="mx-auto d-block mb-3">
                 <p class="h4 text-center font-weight-bold">Ruben Marton R.</p>
                 <p class="text-muted text-center"><em>Developer</em></p>
