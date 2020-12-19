@@ -14,6 +14,10 @@
         margin-top: -120px;
     }
 
+    .jumbotron .display-4 {
+       margin-top: 130px;
+    }
+
     hr {
         border-color: #000000;
         width: 100px;
@@ -42,7 +46,7 @@
 @if (!Auth::check() || auth()->user()->role=="member")
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            
+            <h1 class="display-4 text-white text-center">Who are we?</h1>
         </div>
     </div>
 
