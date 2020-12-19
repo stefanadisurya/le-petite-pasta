@@ -1,5 +1,8 @@
 @extends('layouts.master')
 
+@section('content')
+@if(auth()->user()->role=="member")
+
 @section('title', 'Transaction History — Le Petite Pasta')
 
 @section('styles')
@@ -42,8 +45,6 @@
     </style>
 @endsection
 
-@section('content')
-@if(auth()->user()->role=="member")
 <div class="container my-5">
     @if($transactions->count() > 0)
         <table class="table">
@@ -81,6 +82,48 @@
 </div>
 
 @elseif(auth()->user()->role=="admin")
+@section('title', 'View All Transactions — Le Petite Pasta')
+
+@section('styles')
+    <style>
+        * {
+            font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+        }
+
+        table {
+            background: #fff;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn1 {
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 10px;
+            -webkit-transition: all 0.4s ease;
+            -o-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            color: #fff;
+            font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+        }
+
+        .btn1:hover {
+            color: #ffffff;
+        }
+
+        thead {
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+@endsection
+
 <div class="container my-5">
     @if($alltransactions->count() > 0)
         <table class="table">
