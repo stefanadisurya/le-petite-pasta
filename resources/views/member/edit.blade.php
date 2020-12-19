@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Profile — Le Petite Pasta')
+@section('title', 'Edit Profile — Le Petite Pasta')
 
 @section('styles')
 <link href="{{ asset('css/main.css') }}" rel="stylesheet" media="all">
