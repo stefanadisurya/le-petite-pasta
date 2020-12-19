@@ -59,8 +59,8 @@
 @section('content')
     <div class="container my-5">
         <div class="row justify-content-start">
-            <div class="col-md-12 my-3">
-                <div class="card border-light mt-5 mb-3">
+            <div class="col-md-12">
+                <div class="card">
                     <div class="row showcase-left">
                         <div class="col-sm-4 mr-0">
                             <img src="{{ asset('assets/image/' . $product->image) }}" class="mx-3 my-3" alt="{{ $product->name }}" style="width: 370px; height: 350px">
@@ -84,7 +84,7 @@
         </div>
     </div>
 
-    @for ($i = 0; $i < 3; $i++)
+    @for ($i = 0; $i < 7; $i++)
         <br>
     @endfor
 @endsection
