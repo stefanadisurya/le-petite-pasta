@@ -31,24 +31,26 @@ class MemberController extends Controller
         $request->validate([
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
-            // 'password' => ['required', 'string', 'min:6'],
             'address' => ['required', 'min:5'],
-            'phone_number' => ['required', 'numeric']
+            'phone_number' => ['required', 'numeric', 'digits_between:6,13'],
+            'image' => ['mimes:jpeg,jpg,png']
         ]);
 
-        $filename = $request->image->getClientOriginalName();
+        if($request->hasFile('image')) {
+            $filename = $request->image->getClientOriginalName();
+            User::where('id', $user->id)->update([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'address' => $request->address,
+                'phone_number' => $request->phone_number,
+                'image' => $filename
+            ]);
 
-        User::where('id', $user->id)->update([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            // 'password' => bcrypt($request->password),
-            'address' => $request->address,
-            'phone_number' => $request->phone_number,
-            'image' => $filename
-        ]);
-
-        $request->image->storeAs('image', $filename, 'public');
-        Alert::success('Edit Profile Success!', 'Your profile has been updated');
+            $request->image->storeAs('image', $filename, 'public');
+            Alert::toast('Profile updated', 'success');
+        } else {
+            Alert::toast('Profile updated', 'success');
+        }
 
         return redirect()->route('profile', ['user' => $user]);
     }
@@ -80,7 +82,7 @@ class MemberController extends Controller
             ]);
         }
 
-        Alert::success('Add to Cart Success!', 'Product added to cart');
+        Alert::toast('Product added to cart', 'success');
 
         return redirect()->route('order', $product);
     }
@@ -102,14 +104,14 @@ class MemberController extends Controller
             'quantity' => $request->quantity
         ]);
 
-        Alert::success('Update Quantity Success!', 'Product quantity updated');
+        Alert::toast('Product quantity updated', 'success');
 
         return redirect()->route('cart');
     }
 
     public function remove(Cart $cart) {
         Cart::destroy($cart->id);
-        Alert::success('Remove Product Success!', 'Product removed from cart');
+        Alert::toast('Product removed from cart', 'success');
 
         return redirect()->route('cart');
     }

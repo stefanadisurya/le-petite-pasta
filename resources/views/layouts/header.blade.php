@@ -54,7 +54,7 @@
               <li class="nav-item dropdown">
                   <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     @if(auth()->user()->image == null)
-                      {{ Auth::user()->username ?? '' }}
+                      <img src="{{ asset('assets/image/default.jpg') }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
                     @else
                       <img src="{{ asset('assets/image/' . auth()->user()->image) }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
                     @endif
@@ -92,7 +92,7 @@
               <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   @if(auth()->user()->image == null)
-                    {{ Auth::user()->username ?? '' }}
+                    <img src="{{ asset('assets/image/default.jpg') }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
                   @else
                     <img src="{{ asset('assets/image/' . auth()->user()->image) }}" style="width: 25px; height: 25px; border-radius: 25px;" alt="">
                   @endif
